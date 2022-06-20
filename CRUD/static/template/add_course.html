@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+{% block page_title %}
+Add Course
+{% endblock page_title %}
+{% block main_content %}
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Add Coure</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+            {% if submitted %}
+            You added a Course successfully!!
+            {% else %}
+                  <form action="" method="POST" >
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                
+
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary mb-3">Add Course</button>
+                        </div>
+                </form>
+                {% endif %}
+            </div>
+            <!-- /.card -->
+
+
+
+          </div>
+          </div>
+      </div>
+    </section>
+    <!-- /.content -->
+{% endblock main_content %}
+
